@@ -1,0 +1,26 @@
+*.env
+*.iml
+target
+config.local.yaml
+datasets
+commands
+client-java
+.DS_Store
+*.jar
+*.swp
+.classpath
+.editorconfig
+.gradle/
+.idea/
+.run/
+.project
+.settings
+.vscode/
+./out/*
+out/*
+./**/*.class
+bin/
+build
+
+# Metis configuration
+config.yml
