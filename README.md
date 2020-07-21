@@ -1,11 +1,11 @@
-# Google Cloud Storage file input plugin for Embulk
+# Google Cloud Storage parquet input plugin for Embulk
 [![Build Status](https://travis-ci.org/embulk/embulk-input-gcs.svg?branch=master)](https://travis-ci.org/embulk/embulk-input-gcs)
 
 ## Overview
 
 embulk-input-gcs v0.3.0+ requires Embulk v0.9.12+
 
-* Plugin type: **file input**
+* Plugin type: **parquet file input**
 * Resume supported: **yes**
 * Cleanup supported: **yes**
 
@@ -14,7 +14,7 @@ embulk-input-gcs v0.3.0+ requires Embulk v0.9.12+
 ### Install plugin
 
 ```
-embulk gem install embulk-input-gcs
+embulk gem install embulk-input-gcs_parquet
 ```
 
 ### Google Service Account Settings
