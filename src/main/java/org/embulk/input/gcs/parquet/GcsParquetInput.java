@@ -56,11 +56,13 @@ public class GcsParquetInput extends InputStreamFileInput implements Transaction
               Storage.BlobListOption.prefix(prefix),
               Storage.BlobListOption.pageToken(lastKey));
       for (Blob blob : blobs.iterateAll()) {
-        if (blob.getSize() > 0) {
-          builder.add(blob.getName(), blob.getSize());
+        if (blob.getName().contains(".parquet")) {
+          if (blob.getSize() > 0) {
+            builder.add(blob.getName(), blob.getSize());
+          }
+          LOG.debug("filename: {}", blob.getName());
+          LOG.debug("updated: {}", blob.getUpdateTime());
         }
-        LOG.debug("filename: {}", blob.getName());
-        LOG.debug("updated: {}", blob.getUpdateTime());
       }
     } catch (RuntimeException e) {
       if ((e instanceof StorageException) && ((StorageException) e).getCode() == 400) {
